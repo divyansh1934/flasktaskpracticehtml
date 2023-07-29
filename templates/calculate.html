@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+
+<body>
+ <div class="calculate">
+	<h1>Calculate the result</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('calculate')}}" method="post">
+    	<input type="text" name="operation" placeholder="operation" required="required" />
+        <input type="text" name="number1" placeholder="number1" required="required" />
+		<input type="text" name="number2" placeholder="number2" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Calculate Button</button>
+    </form>
+
+   <br>
+   <br>
+   {% if result is defined %}
+   <h2>Result: {{ result }}</h2>
+   {% endif %}
+
+ </div>
+
+
+</body>
+</html>
